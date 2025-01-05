@@ -45,8 +45,20 @@
     </div>
 
 <script> 
+    const visorcontent = document.querySelector(".visorcontent")
+    let memory = "";
+    let actualNumber = "";
 
-
+    function addnumber (number) {
+            if (memory === "") { 
+                actualNumber += number.textContent
+                visorcontent.textContent += number.textContent
+            }
+            else {
+                actualNumber += number.textContent;
+                visorcontent.textContent += number.textContent;
+            }
+        }
 </script>
 
 </body>
