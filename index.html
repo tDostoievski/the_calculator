@@ -60,16 +60,56 @@
             }
         }
 
-    function sum () {
-        memory = visorcontent.textContent
-        visorcontent.textContent = (memory) + "+";
-        actualNumber = "";
+    function check (k) { 
+        if (visorcontent.textContent.includes("+")|| visorcontent.textContent.includes("*")|| visorcontent.textContent.includes("/")|| visorcontent.textContent.includes("-")) {
+            return k === true;
+        }
+        else {
+            return k === false;
+        }
         }
 
+    function sum () {
+        if (k = true) {
+            equal();
+            memory = visorcontent.textContent
+            visorcontent.textContent = (memory) + "+";
+            actualNumber = "";}
+        else {
+            memory = visorcontent.textContent
+            visorcontent.textContent = (memory) + "+";
+            actualNumber = ""; 
+            }
+        }
+
+    function multiply () {
+        if (k = true) {
+            equal();
+            memory = visorcontent.textContent
+            visorcontent.textContent = (memory) + "*";
+            actualNumber = "";}
+        else {
+            memory = visorcontent.textContent
+            visorcontent.textContent = (memory) + "*";
+            actualNumber = ""; 
+            }
+        ;}
+
     function equal () {
-        visorcontent.textContent = Number (memory) + Number (actualNumber)
-        memory.textContent = "";
-        actualNumber = ""; }
+        if (visorcontent.textContent.includes("+")) { 
+            visorcontent.textContent = Number (memory) + Number (actualNumber)
+            memory.textContent = "";
+            actualNumber = ""; 
+            }
+        else if (visorcontent.textContent.includes("*")) {
+            visorcontent.textContent = Number (memory) * Number (actualNumber)
+            memory.textContent = "";
+            actualNumber = "";
+            }
+        else {
+
+            }
+        }
 
 </script>
 
