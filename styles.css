@@ -1,0 +1,78 @@
+.content {
+    display: flex;
+    align-items: center;
+    padding-top: 300px;
+    flex-direction: column;
+}
+
+.columns {
+    display: flex;
+}
+.visor {
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    width: 280px;
+    background-color: aqua;
+    flex: 1 0 auto;
+}
+
+.visorcontent, p{
+    flex-grow: 1 1 0;
+}
+
+.memory, p{
+    flex-grow: 1 1 0;
+    
+    
+}
+
+.coluna2, .coluna1, .coluna3, .coluna4 {
+    display: flex;
+    flex-direction: column;
+    width: 70px;
+    height: 350px;
+}
+
+button {
+    flex: 1 1 0;
+    background-color: aqua;
+    border: 0;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: blue;
+}
+
+    #delete {
+        background-image: url(images/delete-315.png);
+        background-size: 42% 45%;
+    }
+
+    #divisao {
+        background-image: url(images/divisao.png);
+    }
+
+    #adicao {
+        background-image: url(images/adicao.png);
+    }
+
+    #subtracao {
+        background-image: url(images/sub.png);
+    }
+
+    #multiplicacao {
+        background-image: url(images/multi.png);
+    }
+    #resultado {
+        background-image: url(images/equal.png);
+    }
+
+.simbolo {
+    padding: 0;
+    flex-shrink: 0;
+    background-size: 30% 31%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
