@@ -49,76 +49,56 @@
     let memory = "";
     let actualNumber = "";
 
+
     function addnumber (number) {
-        if (memory === "") { 
-            actualNumber += number.textContent
-            visorcontent.textContent += number.textContent
-            }
-        else {
-            actualNumber += number.textContent;
-            visorcontent.textContent += number.textContent;
-            }
+        actualNumber += number.textContent;
+        visorcontent.textContent += number.textContent;
     }
 
-    function check (k) { 
-        if (memory.textContent.includes("+")|| memory.textContent.includes("*")|| memory.textContent.includes("/")|| memory.textContent.includes("-")) {
-            return k === true;
-        }
-        else {
-            return k === false;
-        }
+    function getLastCharacter (str) {
+        return str[str.length - 1]
     }
 
+
+    function check () {
+        const glc = getLastCharacter(visorcontent.textContent);
+        console.log (glc)
+        if (glc.includes("+")|| glc.includes("*")|| glc.includes("/")|| glc.includes("-")) {
+            visorcontent.textContent = visorcontent.textContent.slice(0,-1)
+            console.log ("check", visorcontent.textContent)
+        }
+    }
+  
     function sum () {
-        if (k = true) {
-            equal();
-            memory = visorcontent.textContent
-            visorcontent.textContent = (memory) + "+";
-            actualNumber = "";}
-        else {
-            memory = visorcontent.textContent
-            visorcontent.textContent = (memory) + "+";
-            actualNumber = ""; 
-            }
+        check()
+        equal();
+        memory = visorcontent.textContent
+        visorcontent.textContent = (memory) + "+";
+        actualNumber = "";
         }
-
+    
     function multiply () {
-        if (k = true) {
-            equal();
-            memory = visorcontent.textContent
-            visorcontent.textContent = (memory) + "*";
-            actualNumber = "";}
-        else {
-            memory = visorcontent.textContent
-            visorcontent.textContent = (memory) + "*";
-            actualNumber = ""; 
-            }
+        check ();
+        equal();
+        memory = visorcontent.textContent
+        visorcontent.textContent = (memory) + "*";
+        actualNumber = "";
         }
 
     function divide () {
-        if (k = true) {
-            equal();
-            memory = visorcontent.textContent
-            visorcontent.textContent = (memory) + "/";
-            actualNumber = "";}
-        else {
-            memory = visorcontent.textContent
-            visorcontent.textContent = (memory) + "/";
-            actualNumber = ""; 
-            }
+        check ()
+        equal();
+        memory = visorcontent.textContent
+        visorcontent.textContent = (memory) + "/";
+        actualNumber = "";
         }
 
     function subtract () {
-        if (k = true) {
-            equal();
-            memory = visorcontent.textContent
-            visorcontent.textContent = (memory) + "-";
-            actualNumber = "";}
-        else {
-            memory = visorcontent.textContent
-            visorcontent.textContent = (memory) + "-";
-            actualNumber = ""; 
-            }
+        check ();
+        equal();
+        memory = visorcontent.textContent
+        visorcontent.textContent = (memory) + "-";
+        actualNumber = "";
         }
     
 
@@ -148,7 +128,6 @@
 
     function decimal () {
         if (k = true && actualNumber === "") {
-            console.log ("oi")
             visorcontent.textContent = visorcontent.textContent;
             }
         else {
