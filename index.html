@@ -38,7 +38,7 @@
                 <button onclick="divide(this)" class="simbolo" id="divisao"></button>
                 <button onclick="multiply(this)" class="simbolo" id="multiplicacao"> </button>
                 <button onclick="subtract(this)" class="simbolo" id="subtracao"> </button>
-                <button onclick="some(this)" class="simbolo" id="adicao"> </button>
+                <button onclick="sum(this)" class="simbolo" id="adicao"> </button>
                 <button onclick="equal(this)" class="simbolo" id="resultado"></button>
             </div>
         </div>
@@ -50,15 +50,27 @@
     let actualNumber = "";
 
     function addnumber (number) {
-            if (memory === "") { 
-                actualNumber += number.textContent
-                visorcontent.textContent += number.textContent
+        if (memory === "") { 
+            actualNumber += number.textContent
+            visorcontent.textContent += number.textContent
             }
-            else {
-                actualNumber += number.textContent;
-                visorcontent.textContent += number.textContent;
+        else {
+            actualNumber += number.textContent;
+            visorcontent.textContent += number.textContent;
             }
         }
+
+    function sum () {
+        memory = visorcontent.textContent
+        visorcontent.textContent = (memory) + "+";
+        actualNumber = "";
+        }
+
+    function equal () {
+        visorcontent.textContent = Number (memory) + Number (actualNumber)
+        memory.textContent = "";
+        actualNumber = ""; }
+
 </script>
 
 </body>
