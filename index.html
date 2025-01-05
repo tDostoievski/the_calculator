@@ -32,7 +32,7 @@
                 <button onclick="addnumber(this)" class="number" >9</button>
                 <button onclick="addnumber(this)" class="number" >6</button>
                 <button onclick="addnumber(this)" class="number" >3</button>
-                <button class="virgula">,</button>
+                <button class="virgula">.</button>
             </div>
             <div class="coluna4">
                 <button onclick="divide(this)" class="simbolo" id="divisao"></button>
@@ -95,6 +95,33 @@
             }
         ;}
 
+    function divide () {
+        if (k = true) {
+            equal();
+            memory = visorcontent.textContent
+            visorcontent.textContent = (memory) + "/";
+            actualNumber = "";}
+        else {
+            memory = visorcontent.textContent
+            visorcontent.textContent = (memory) + "/";
+            actualNumber = ""; 
+            }
+        ;}
+
+    function subtract () {
+        if (k = true) {
+            equal();
+            memory = visorcontent.textContent
+            visorcontent.textContent = (memory) + "-";
+            actualNumber = "";}
+        else {
+            memory = visorcontent.textContent
+            visorcontent.textContent = (memory) + "-";
+            actualNumber = ""; 
+            }
+        ;}
+    
+
     function equal () {
         if (visorcontent.textContent.includes("+")) { 
             visorcontent.textContent = Number (memory) + Number (actualNumber)
@@ -106,8 +133,15 @@
             memory.textContent = "";
             actualNumber = "";
             }
-        else {
-
+        else if (visorcontent.textContent.includes("/")) {
+            visorcontent.textContent = Number (memory) / Number (actualNumber)
+            memory.textContent = "";
+            actualNumber = "";
+            }
+        else if (visorcontent.textContent.includes("-")) {
+            visorcontent.textContent = Number (memory) - Number (actualNumber)
+            memory.textContent = "";
+            actualNumber = ""; 
             }
         }
 
