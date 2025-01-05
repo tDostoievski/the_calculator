@@ -32,7 +32,7 @@
                 <button onclick="addnumber(this)" class="number" >9</button>
                 <button onclick="addnumber(this)" class="number" >6</button>
                 <button onclick="addnumber(this)" class="number" >3</button>
-                <button class="virgula">.</button>
+                <button onclick="decimal(this)" class="point">.</button>
             </div>
             <div class="coluna4">
                 <button onclick="divide(this)" class="simbolo" id="divisao"></button>
@@ -58,16 +58,16 @@
             actualNumber += number.textContent;
             visorcontent.textContent += number.textContent;
             }
-        }
+    }
 
     function check (k) { 
-        if (visorcontent.textContent.includes("+")|| visorcontent.textContent.includes("*")|| visorcontent.textContent.includes("/")|| visorcontent.textContent.includes("-")) {
+        if (memory.textContent.includes("+")|| memory.textContent.includes("*")|| memory.textContent.includes("/")|| memory.textContent.includes("-")) {
             return k === true;
         }
         else {
             return k === false;
         }
-        }
+    }
 
     function sum () {
         if (k = true) {
@@ -93,7 +93,7 @@
             visorcontent.textContent = (memory) + "*";
             actualNumber = ""; 
             }
-        ;}
+        }
 
     function divide () {
         if (k = true) {
@@ -106,7 +106,7 @@
             visorcontent.textContent = (memory) + "/";
             actualNumber = ""; 
             }
-        ;}
+        }
 
     function subtract () {
         if (k = true) {
@@ -119,11 +119,12 @@
             visorcontent.textContent = (memory) + "-";
             actualNumber = ""; 
             }
-        ;}
+        }
     
 
     function equal () {
         if (visorcontent.textContent.includes("+")) { 
+            console.log (actualNumber)
             visorcontent.textContent = Number (memory) + Number (actualNumber)
             memory.textContent = "";
             actualNumber = ""; 
@@ -144,6 +145,17 @@
             actualNumber = ""; 
             }
         }
+
+    function decimal () {
+        if (k = true && actualNumber === "") {
+            console.log ("oi")
+            visorcontent.textContent = visorcontent.textContent;
+            }
+        else {
+            visorcontent.textContent += ".";
+            actualNumber += "."
+        }
+    }
 
 </script>
 
