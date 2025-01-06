@@ -63,7 +63,7 @@
     function check () {
         const glc = getLastCharacter(visorcontent.textContent);
         console.log (glc)
-        if (glc.includes("+")|| glc.includes("*")|| glc.includes("/")|| glc.includes("-")|| glc.includes("%")) {
+        if (glc.includes("+")|| glc.includes("*")|| glc.includes("/")|| glc.includes("-")|| glc.includes("%")|| glc.includes(".")) {
             visorcontent.textContent = visorcontent.textContent.slice(0,-1);
             console.log ("check", visorcontent.textContent);
         }
@@ -139,9 +139,13 @@
     }
 
     function decimal () {
+        if (actualNumber.includes(".")){    
+        }
+        else { 
         check ();
         visorcontent.textContent += ".";
         actualNumber += "."
+        }
     }
 
     function clearAll () {
