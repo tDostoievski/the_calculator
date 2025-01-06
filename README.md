@@ -1,3 +1,2 @@
 # the_calculator
-This my first project in javascript
-I try to make a calculator wich are capable to use multiple operators in the same time, but i noticed that is such a complex for my level. So, i decided to do something more simple. 
+This is my first project in JavaScript. I tried to make a calculator which is capable of using multiple operators at the same time, but I noticed that it is too complex for my level. So, I decided to do something simpler. 
