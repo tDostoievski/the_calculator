@@ -1,24 +1,42 @@
+@font-face {
+    font-family: "DuneRise";
+    src: url('fonts/Dune_Rise.ttf')format("truetype")   
+}
+
+body {
+    font-family: "DuneRise", sans-serif;
+}
 .content {
     display: flex;
     align-items: center;
-    padding-top: 300px;
     flex-direction: column;
+    padding-top: 100px;
+    background-image: url('images/fundo.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    
 }
 
 .columns {
-    display: flex;
+    display: flex
 }
 .visor {
     display: flex;
-    flex-direction: column;
-    height: 80px;
-    width: 280px;
-    background-color: aqua;
+    height: 150px;
+    width: 265px;
+    align-items: center;
     flex: 1 0 auto;
+    white-space: nowrap;
+    padding-bottom: 20px;
+    overflow:hidden;
+    justify-content: right;
+    padding-right: 15px;
+   
 }
 
 .visorcontent, p{
     flex-grow: 1 1 0;
+    font-size: 19px;
 }
 
 .memory, p{
@@ -31,43 +49,56 @@
     display: flex;
     flex-direction: column;
     width: 70px;
-    height: 350px;
+    height: 330px;
+    padding-bottom: 3px;
 }
 
 button {
     flex: 1 1 0;
-    background-color: aqua;
     border: 0;
+    background-color: transparent;
     font-size: 20px;
+    color: black;
+    font-family: "DuneRise", sans-serif;
 }
 
 button:hover {
-    background-color: blue;
+    background-color: #e1a346;
 }
 
     #delete {
-        background-image: url(images/delete-315.png);
-        background-size: 42% 45%;
+        background-image: url('images/delete-315.png');
+        background-size: 37% 40%;
+        background-position: center;
+        background-repeat: no-repeat;
+    
     }
 
-    #divisao {
-        background-image: url(images/divisao.png);
-    }
+    #divisao{
+
+        font-size:30px
+            }
 
     #adicao {
-        background-image: url(images/adicao.png);
-    }
+
+        font-size:30px;
+            }
 
     #subtracao {
-        background-image: url(images/sub.png);
-    }
+
+        font-size:30px;
+            }
 
     #multiplicacao {
-        background-image: url(images/multi.png);
-    }
+
+        font-size:20px;
+            }
     #resultado {
-        background-image: url(images/equal.png);
-    }
+
+        font-size:30px;
+            }
+
+
 
 .simbolo {
     padding: 0;
