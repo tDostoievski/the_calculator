@@ -28,7 +28,7 @@
                 <button onclick="addnumber(this)" class="number">0</button>
             </div> 
             <div class="coluna3">
-                <button class="porcentagem">%</button>
+                <button onclick="percentage(this)">%</button>
                 <button onclick="addnumber(this)" class="number" >9</button>
                 <button onclick="addnumber(this)" class="number" >6</button>
                 <button onclick="addnumber(this)" class="number" >3</button>
@@ -63,7 +63,7 @@
     function check () {
         const glc = getLastCharacter(visorcontent.textContent);
         console.log (glc)
-        if (glc.includes("+")|| glc.includes("*")|| glc.includes("/")|| glc.includes("-")) {
+        if (glc.includes("+")|| glc.includes("*")|| glc.includes("/")|| glc.includes("-")|| glc.includes("%")) {
             visorcontent.textContent = visorcontent.textContent.slice(0,-1);
             console.log ("check", visorcontent.textContent);
         }
@@ -100,6 +100,14 @@
         visorcontent.textContent = (memory) + "-";
         actualNumber = "";
     }
+
+    function percentage () {
+        check();
+        equal();
+        memory = visorcontent.textContent
+        visorcontent.textContent = (memory) + "%";
+        actualNumber = "";
+    }
     
 
     function equal () {
@@ -123,6 +131,11 @@
             memory.textContent = "";
             actualNumber = ""; 
             }
+        else if (visorcontent.textContent.includes("%")) {
+            visorcontent.textContent = (Number (memory)/100) * Number (actualNumber)
+            memory.textContent = "";
+            actualNumber = ""; 
+            }
     }
 
     function decimal () {
@@ -139,6 +152,7 @@
     function deleteLast () {
         visorcontent.textContent = visorcontent.textContent.slice(0,-1);
     }
+
 
 </script>
 
