@@ -14,14 +14,14 @@
         </div>
         <div class="columns">
             <div class="coluna1">
-                <button class="ac">AC</button>
+                <button onclick="clearAll(this)">AC</button>
                 <button onclick="addnumber(this)" >7</button>
                 <button onclick="addnumber(this)" class="number">4</button>
                 <button onclick="addnumber(this)" class="number">1</button>
                 <button onclick="addnumber(this)" class="number"></button>
             </div>
             <div class="coluna2">
-                <button onclick="deletenumber(this)" class="simbolo" id="delete"> </button>
+                <button onclick="deleteLast(this)" class="simbolo" id="delete"> </button>
                 <button onclick="addnumber(this)" class="number">8</button>
                 <button onclick="addnumber(this)" class="number">5</button>
                 <button onclick="addnumber(this)" class="number">2</button>
@@ -64,8 +64,8 @@
         const glc = getLastCharacter(visorcontent.textContent);
         console.log (glc)
         if (glc.includes("+")|| glc.includes("*")|| glc.includes("/")|| glc.includes("-")) {
-            visorcontent.textContent = visorcontent.textContent.slice(0,-1)
-            console.log ("check", visorcontent.textContent)
+            visorcontent.textContent = visorcontent.textContent.slice(0,-1);
+            console.log ("check", visorcontent.textContent);
         }
     }
   
@@ -75,36 +75,35 @@
         memory = visorcontent.textContent
         visorcontent.textContent = (memory) + "+";
         actualNumber = "";
-        }
+    }
     
     function multiply () {
-        check ();
+        check();
         equal();
         memory = visorcontent.textContent
         visorcontent.textContent = (memory) + "*";
         actualNumber = "";
-        }
+    }
 
     function divide () {
-        check ()
+        check()
         equal();
         memory = visorcontent.textContent
         visorcontent.textContent = (memory) + "/";
         actualNumber = "";
-        }
+    }
 
     function subtract () {
-        check ();
+        check();
         equal();
         memory = visorcontent.textContent
         visorcontent.textContent = (memory) + "-";
         actualNumber = "";
-        }
+    }
     
 
     function equal () {
         if (visorcontent.textContent.includes("+")) { 
-            console.log (actualNumber)
             visorcontent.textContent = Number (memory) + Number (actualNumber)
             memory.textContent = "";
             actualNumber = ""; 
@@ -124,16 +123,21 @@
             memory.textContent = "";
             actualNumber = ""; 
             }
-        }
+    }
 
     function decimal () {
-        if (k = true && actualNumber === "") {
-            visorcontent.textContent = visorcontent.textContent;
-            }
-        else {
-            visorcontent.textContent += ".";
-            actualNumber += "."
-        }
+        check ();
+        visorcontent.textContent += ".";
+        actualNumber += "."
+    }
+
+    function clearAll () {
+        memory.textContent = "";
+        visorcontent.textContent = "";
+    }
+
+    function deleteLast () {
+        visorcontent.textContent = visorcontent.textContent.slice(0,-1);
     }
 
 </script>
